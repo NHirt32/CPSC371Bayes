@@ -1,5 +1,5 @@
-def file_read():
-    sample_data_file = open("MushroomData_8000.txt", "r") # Opens known mushroom file in read mode
+def file_read(requested_file):
+    sample_data_file = open(requested_file, "r") # Opens known mushroom file in read mode
     sample_data_list = sample_data_file.readlines() # Reads each line into an array element
 
     for index, data in enumerate(sample_data_list):
