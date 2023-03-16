@@ -1,4 +1,3 @@
-import mushroom
 import file_reader
 import bayes
 
@@ -14,5 +13,13 @@ for index in range(len(unknown_data_list)): # Adding ? to our class component of
 
 bayes.unknown_mushroom_list_probability(sample_data_list, unknown_data_list)
 
+# Console debug printing
 for data in unknown_data_list:
     print(str(data))
+
+# Opening file and writing edibility column to it
+output = open("predictionResultBayes.txt", "w")
+for prediction in unknown_data_list:
+    output.write(str(prediction[0]))
+    output.write("\n")
+output.close()
