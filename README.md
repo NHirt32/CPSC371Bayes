@@ -35,4 +35,6 @@
         Based on these comparisions we update our list of mushroom properties.
     
 ## How To Use
-    
+        Open the project in a software that supports python files and run main.py.
+        Enter which file mode you'd like to preview (1600 or 100) in the terminal.
+        Please note that there is a significant delay for 1600 as it has to compute probabilities for 1600 mushroom attributes.
