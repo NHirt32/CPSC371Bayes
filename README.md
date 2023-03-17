@@ -21,12 +21,12 @@
     When utilizing these files we were able to measure a correct prediction rate of 93%.
     
 ## Project Structure
-    This project is seperated into 3 seperate python files which are described below:
-    ### main.py
+        This project is seperated into 3 seperate python files which are described below:
+### main.py
         Standard main file for this project. Contains very basic functionality and primarily calls functionality from our other python files.
-    ###file_reader.py
+###file_reader.py
         This file is responsible for reading data in from our given .txt files and outputting this data as
-    ###bayes.py
+###bayes.py
     
 ## How To Use
     
