@@ -27,8 +27,12 @@
         Additionally, has an options selector from user whether to use a 8000:100 or 6400:1600 known:unknown mushroom split.
         Note that for model accuracy only 6400:1600 mode is supported as with our 100 unknown mushrooms we do not know their actual edibility values.
 ### file_reader.py
-        This file is responsible for reading data in from our given .txt files and outputting this data as
+        This file is responsible for reading data in from our given .txt files and outputting this data as a list.
+        This list is stripped of '\n' and split on ','.
 ### bayes.py
+        This file is responsible for our actual formula calculations.
+        It will calculate the probability a given mushroom is edible or poisonous and compare these probabilities.
+        Based on these comparisions we update our list of mushroom properties.
     
 ## How To Use
     
