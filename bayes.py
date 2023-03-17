@@ -13,7 +13,7 @@ def unknown_mushroom_list_probability(known_mushroom_list, unknown_mushroom_list
             unknown_mushroom_list[index][0] = 'p'
             results_list.append('p')
 
-        print(unknown_mushroom_list[index][0])
+        print(results_list[index])
 
 
 def x_probability(known_mushroom_list, unknown_mushroom):

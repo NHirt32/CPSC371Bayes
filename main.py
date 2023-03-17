@@ -7,8 +7,8 @@ def user_input():
     file_mode = int(file_mode)
     # Here we create a list of chars of mushroom characteristics from our known mushroom data
     if file_mode == 1600:
-        sample_data_list = file_reader.file_read("MushroomTrainingData_6400")
-        unknown_data_list = file_reader.file_read("MushroomTestData_1600 - Copy - Copy.txt")
+        sample_data_list = file_reader.file_read("MushroomTrainingData_6400.txt")
+        unknown_data_list = file_reader.file_read("MushroomTestData_1600.txt")
         return (sample_data_list, unknown_data_list, file_mode)
     elif file_mode == 100:
         sample_data_list = file_reader.file_read("MushroomData_8000.txt")
@@ -31,7 +31,7 @@ unknown_data_list = file_tuple[1]
 if file_mode == 1600:
     initial_edibility =[] # Checking initial edibility data for file mode 1600
     for value in unknown_data_list:
-        initial_edibility.append(value[0])
+        initial_edibility.append(value.pop(0))
 
 for index in range(len(unknown_data_list)): # Adding ? to our class component of unknown mushrooms
     unknown_data_list[index].insert(0, '?')
