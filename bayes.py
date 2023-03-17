@@ -1,5 +1,5 @@
 
-def unknown_mushroom_list_probability(known_mushroom_list, unknown_mushroom_list):
+def unknown_mushroom_list_probability(known_mushroom_list, unknown_mushroom_list, results_list):
     for index in range(len(unknown_mushroom_list)):
         edibility_odds = (x_probability(known_mushroom_list,unknown_mushroom_list[index]) *
                           x_probability_given_edible(known_mushroom_list,unknown_mushroom_list[index]))/ edible_probability(known_mushroom_list)
@@ -8,8 +8,12 @@ def unknown_mushroom_list_probability(known_mushroom_list, unknown_mushroom_list
                                                      unknown_mushroom_list[index])) / poison_probability(known_mushroom_list)
         if edibility_odds > poison_odds:
             unknown_mushroom_list[index][0] = 'e'
+            results_list.append('e')
         else:
             unknown_mushroom_list[index][0] = 'p'
+            results_list.append('p')
+
+        print(unknown_mushroom_list[index][0])
 
 
 def x_probability(known_mushroom_list, unknown_mushroom):

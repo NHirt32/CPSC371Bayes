@@ -7,8 +7,8 @@ def user_input():
     file_mode = int(file_mode)
     # Here we create a list of chars of mushroom characteristics from our known mushroom data
     if file_mode == 1600:
-        sample_data_list = file_reader.file_read("MushroomTrainingData_6400.txt")
-        unknown_data_list = file_reader.file_read("MushroomTestData_1600.txt")
+        sample_data_list = file_reader.file_read("MushroomTrainingData_6400")
+        unknown_data_list = file_reader.file_read("MushroomTestData_1600 - Copy - Copy.txt")
         return (sample_data_list, unknown_data_list, file_mode)
     elif file_mode == 100:
         sample_data_list = file_reader.file_read("MushroomData_8000.txt")
@@ -34,14 +34,11 @@ if file_mode == 1600:
         initial_edibility.append(value[0])
 
 for index in range(len(unknown_data_list)): # Adding ? to our class component of unknown mushrooms
-    unknown_data_list[index][0] = '?'
+    unknown_data_list[index].insert(0, '?')
 
+results_list = []
 
-bayes.unknown_mushroom_list_probability(sample_data_list, unknown_data_list)
-
-for data in unknown_data_list:
-    print(str(data))
-
+bayes.unknown_mushroom_list_probability(sample_data_list, unknown_data_list, results_list)
 
 if file_mode == 1600: # Conditionally checking formula accuracy if given a data set where we already know the answer
     correct_prediction = 0
@@ -50,3 +47,12 @@ if file_mode == 1600: # Conditionally checking formula accuracy if given a data 
             correct_prediction += 1
     accuracy_percentage = correct_prediction/len(unknown_data_list)
     print("Naive Byes has an accuracy of: " + str(accuracy_percentage))
+
+else:
+    # Write Output
+    output_file = open("predictionResultNBC.txt", 'w')
+
+    for prediction in results_list:
+        output_file.write(prediction + "\n")
+
+    output_file.close()
